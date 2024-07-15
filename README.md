@@ -10,12 +10,15 @@ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
 Clone the main Yocto Project repository, Poky.
 git clone -b kirkstone git://git.yoctoproject.org/poky.git
 cd poky
+
 **Clone Additional Required Layers:**
 Clone any additional layers that might be required for your build. 
 git clone -b kirkstone git://git.openembedded.org/meta-openembedded
+
 **Source the Environment Setup Script:**
 Source the environment setup script to set up the build environment.
 source oe-init-build-env
+
 **Configure bblayers.conf:**
 Edit conf/bblayers.conf to include the meta-raspberrypi and other required layers. Add the following lines to your bblayers.conf file:
 BBLAYERS ?= " \
@@ -31,6 +34,7 @@ BBLAYERS ?= " \
 **Configure local.conf:**
 Edit conf/local.conf to set the machine to Raspberry Pi 5. Add or modify the following lines:
 MACHINE ??= "raspberrypi5"
+
 **Start the Build Process:**
 Start the build process by running the following command. This step can take several hours depending on your machine's performance.
 bitbake core-image-minimal
